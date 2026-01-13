@@ -45,6 +45,7 @@
 # 2021/11/22 - Add Collection 100-133
 # 2022/08/24 - Add Collection 133-148
 # 2024/11/07 - Add Collection 149-155
+# 2026/01/13 - Fixed bad hypens (vcarrier)
 #            
 # Purpose : This script create a set of SCCM collections and move it in an "Operational" folder
 # Special Thanks to Joshua Barnette for V3.0
@@ -71,7 +72,7 @@ $FolderPath =($SiteCode.Name +":\DeviceCollection\" + $CollectionFolder.Name)
 $LimitingCollection ="All Systems"
 
 #Refresh Schedule
-$Schedule =New-CMSchedule –RecurInterval Days –RecurCount 7
+$Schedule =New-CMSchedule -RecurInterval Days -RecurCount 7
 
 
 #Find Existing Collections
@@ -1576,3 +1577,4 @@ Else {
         Write-host "-----------------"
         Pause
 }
+
